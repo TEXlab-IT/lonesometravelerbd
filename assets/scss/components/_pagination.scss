@@ -1,0 +1,65 @@
+
+.pagination-area {
+	@include display-flex;
+	@include align-items-center;
+	position: relative;
+	padding: 0;
+	@include mq(false, xs) {
+		padding: 0 10px;
+	}
+	.pagination-number {
+		margin-right: auto;
+	}
+	.posts-navigation {
+		margin-left: auto;
+	}
+}
+ul.pagination {
+	border-radius: 0;
+	margin-bottom: 0;
+	.page-item {
+		border-right: 1px solid $gray;
+		.page-link {
+			font-size: 12px;
+			letter-spacing: 1.4px;
+			font-family: $primary_font;
+			color: $black;
+			background: transparent;
+			border: none;
+			padding: 8px 10px;
+			font-weight: 700;
+			line-height: 1.4;
+			&:focus {
+				outline: none;
+			}
+		}
+		&:last-child,
+		&:first-child {
+			.page-link {
+				border-radius: 0;
+			}
+		}
+		&:last-child {
+			border-right: none;
+		}
+		&:hover,
+		&:active,
+		&.active,
+		&.current {
+			background: $primary;
+			.page-link {
+				color: $white;
+			}
+		}
+	}
+}
+.pagination-number {
+	.total-page {
+		font-size: 12px;
+		letter-spacing: 1.4px;
+		color: $black;
+		font-family: $primary_font;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+}

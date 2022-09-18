@@ -1,0 +1,67 @@
+{
+  "name": "textlabit",
+  "version": "1.0.0",
+  "description": "WordPress Theme framework",
+  "main": "Gruntfile.js",
+  "keywords": [
+    "wordpress",
+    "theme",
+    "framework",
+    "bootstrap",
+    "themeplate"
+  ],
+  "author": "Text lab It",
+  "license": "GPL-2.0",
+  "homepage": "https://www.texlabit.com/",
+  "scripts": {
+    "git:update-hooks": "rm -r .git/hooks && mkdir -p .git/hooks && node ./node_modules/husky/husky.js install"
+  },
+  "dependencies": {
+    "composer": "^4.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@wordpress/babel-preset-default": "3.0.2",
+    "autoprefixer": "^9.4.7",
+    "bourbon": "^5.1.0",
+    "grunt": "^1.1.0",
+    "grunt-babel": "^8.0.0",
+    "grunt-checktextdomain": "^1.0.1",
+    "grunt-contrib-compress": "^1.5.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "~3.0.0",
+    "grunt-contrib-jshint": "~2.0.0",
+    "grunt-contrib-uglify": "~4.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-phpcs": "^0.4.0",
+    "grunt-postcss": "^0.9.0",
+    "grunt-rtlcss": "~2.0.1",
+    "grunt-sass": "~3.0.2",
+    "grunt-stylelint": "~0.10.1",
+    "grunt-wp-assets": "^0.2.6",
+    "grunt-wp-i18n": "^1.0.3",
+    "gulp": "^4.0.2",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.7",
+    "node-sass": "^7.0.1",
+    "stylelint": "~9.10.1",
+    "susy": "2.2.14"
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.1.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "ie >= 8",
+    "edge >= 15",
+    "ie_mob >= 10",
+    "ff >= 45",
+    "chrome >= 45",
+    "safari >= 7",
+    "opera >= 23",
+    "ios >= 7",
+    "android >= 4",
+    "bb >= 10"
+  ]
+}

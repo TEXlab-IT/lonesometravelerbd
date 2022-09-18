@@ -1,0 +1,29 @@
+.widget-area {
+	margin-top: 20px;
+}
+.widget {
+	max-width: 300px;
+	margin: 0 auto 30px;
+}
+.widget-title {
+	display: block;
+	position: relative;
+	color: $black;
+	font-size: 20px;
+	line-height: 30px;
+	font-family: $primary_font;
+	font-weight: 600;
+	letter-spacing: 1.3px;
+	text-transform: uppercase;
+	border-bottom: 1px solid $gray;
+	padding-bottom: 5px;
+	margin-bottom: 15px;
+	a {
+		color: $black;
+		font-family: $primary_font;
+
+		&:hover, &:focus {
+			color: $black;
+		}
+	}
+}

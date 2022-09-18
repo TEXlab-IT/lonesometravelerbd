@@ -1,0 +1,143 @@
+.entry-content {
+	a {
+		&:focus,
+		&:hover {
+			color: $primary;
+			text-decoration: underline;
+		}
+	}
+	ol, ul {
+		padding-left: 20px;
+		margin-bottom: 20px;
+		li {
+			@include important-text;
+			line-height: 30px;
+			letter-spacing: -0.09px;
+			margin-bottom: 8px;
+
+		}
+	}
+	ol li {
+		&::marker {
+			color: $primary;
+			font-family: $secondary_font;
+		}
+	}
+	.wp-block-image {
+		figcaption {
+			color: $black;
+			font-size: 12px;
+			line-height: 18px;
+			font-family: $secondary_font;
+			margin-top: 10px
+		}
+	}
+	.alignleft {
+		margin: 10px 25px 20px 0;
+	}
+	.alignright {
+		margin: 10px 0 20px 25px;
+	}
+
+	.wp-caption {
+		margin-bottom: 30px;
+		@include mq(false, xs) {
+			margin-bottom: 20px;
+		}
+		.wp-caption-text {
+			color: $black;
+			font-size: 12px;
+			line-height: 18px;
+			font-family: $primary_font;
+			font-weight: 500;
+			margin-top: 10px;
+		}
+	}
+
+	blockquote,
+	q {
+		display: block;
+		position: relative;
+		color: $black;
+		font-size: 38px;
+		line-height: 50px;
+		font-family: $primary_font;
+		padding-top: 20px;
+		margin-bottom: 30px;
+		@include mq(xs, md) {
+			font-size: 28px;
+			line-height: 40px;
+			padding-top: 50px;
+		}
+		@include mq(false, xs) {
+			font-size: 24px;
+			line-height: 32px;
+			padding-top: 40px;
+		}
+
+		&:before {
+			content: '“';
+			position: absolute;
+			color: $primary;
+			font-size: 160px;
+			line-height: 1;
+			font-family: $primary_font;
+			font-weight: 400;
+			left: -75px;
+			top: 0;
+
+			@include mq(xs, md) {
+				font-size: 120px;
+				left: 0;
+				top: -10px;
+			}
+			@include mq(false, xs) {
+				font-size: 100px;
+				left: 0;
+				top: -10px;
+			}
+		}
+		p {
+			color: $black;
+			font-size: 38px;
+			line-height: 50px;
+			font-family: $primary_font;
+			font-weight: 300;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			@include mq(xs, md) {
+				font-size: 28px;
+				line-height: 40px;
+			}
+			@include mq(false, xs) {
+				font-size: 24px;
+				line-height: 32px;
+			}
+		}
+	}
+	table {
+		font-size: 18px;
+		line-height: 30px;
+		border: 1px solid $lightgray;
+		margin-bottom: 10px;
+		tr {
+			border-bottom: 1px solid $lightgray;
+			&:last-child {
+				border-bottom: none;
+			}
+			td {
+				padding: 5px;
+				border-right: 1px solid $lightgray;
+				&:last-child {
+					border-right: none;
+				}
+			}
+		}
+	}
+	.gallery {
+		.gallery-item {
+			padding: 5px;
+		}
+	}
+}

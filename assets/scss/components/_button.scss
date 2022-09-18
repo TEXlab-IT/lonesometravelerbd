@@ -1,0 +1,53 @@
+.es-btn {
+	color: $black;
+	font-size: 14px;
+	line-height: 18px;
+	letter-spacing: 0;
+	font-family: $primary_font;
+	font-weight: 500;
+	padding: 10px 16px;
+	background: $secondary;
+	text-transform: uppercase;
+	@include bordered($secondary, 1px);
+	&:hover,
+	&:focus {
+		background: $secondary;
+		color: $black;
+	}
+}
+.back-to-btn {
+	color: $black;
+	font-size: 18px;
+	line-height: 28px;
+	letter-spacing: 1px;
+	font-family: $primary_font;
+	background: $secondary;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: 12px 18px;
+	transition: top 0.99s;
+	&:hover,
+	&:focus {
+		background: $primary;
+		color: $white;
+	}
+}
+
+.arrow {
+	border: solid black;
+	border-width: 0 2px 2px 0;
+	display: inline-block;
+	padding: 3px;
+	&.right {
+		@include transform(rotate(-45deg));
+	}
+	&.left {
+		@include transform(rotate(135deg));
+	}
+	&.up {
+		@include transform(rotate(-135deg));
+	}
+	&.down {
+		@include transform(rotate(45deg));
+	}
+}

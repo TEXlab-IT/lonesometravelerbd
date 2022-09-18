@@ -1,0 +1,75 @@
+.author-info-wrapper {
+	@include display-flex;
+	@include align-items-center;
+	margin: 40px 0;
+	overflow: hidden;
+	@include mq(false, sm) {
+		margin: 20px 0;
+	}
+	@include mq(false, xxs) {
+		@include flex-wrap;
+	}
+	.author-image {
+		width: 180px;
+		height: 180px;
+		@include mq(false, xxs) {
+			height: 180px;
+			width: 100%;
+			margin: 0 auto 20px;
+			text-align: center;
+		}
+
+		img {
+			border-radius: 50%;
+			width: 180px;
+			height: 180px;
+		}
+	}
+	.author-content {
+		flex: 1;
+		padding-left: 30px;
+		@include mq(false, xxs) {
+			padding: 0;
+			overflow: unset;
+			text-align: center;
+		}
+		.author-name {
+			color: $black;
+			font-size: 22px;
+			line-height: 28px;
+			font-family: $primary_font;
+			font-weight: 700;
+			text-transform: uppercase;
+			margin-bottom: 8px;
+			a {
+				color: $black;
+				font-family: inherit;
+			}
+		}
+		.author-meta {
+			display: block;
+			position: relative;
+			margin-bottom: 5px;
+			a {
+				color: $black;
+				font-size: 18px;
+				padding-right: 7px;
+			}
+		}
+		.author-desc {
+			p {
+				color: $black;
+				font-size: 12px;
+				line-height: 20px;
+				letter-spacing: 0.96px;
+				font-family: $primary_font;
+				font-weight: 400;
+				margin-bottom: 15px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+	}
+}

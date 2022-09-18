@@ -1,0 +1,142 @@
+// Social Media Style
+.social-media {
+	@include display-flex-center;
+	.follow-text {
+		color: $black;
+		font-size: 10px;
+		font-family: $primary_font;
+		line-height: 20px;
+		letter-spacing: 0.65px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	a {
+		font-size: 24px;
+		line-height: 32px;
+		color: $black;
+		margin-right: 15px;
+		&:hover,
+		&:focus {
+			color: $primary;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+// Social Share Style
+.social-share-area {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	.comments-message {
+		font-size: 12px;
+		line-height: 20px;
+		font-family: $primary_font;
+		margin-bottom: 15px;
+		a {
+			font-family: $primary_font;
+		}
+	}
+	.social-share {
+		margin-right: 25px;
+	}
+}
+.social-share {
+	@include display-flex;
+	@include align-items-center;
+	margin-bottom: 20px;
+	position: relative;
+	.socila-share-text {
+		@include display-flex;
+		@include align-items-center;
+		position: relative;
+		color: $soft-black;
+		font-family: $body_font;
+		font-weight: 700;
+		font-size: 14px;
+		height: 35px;
+		padding: 0 12px 0 10px;
+		border: 1px solid #e9e9e9;
+		border-radius: 2px;
+		margin-right: 15px;
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			-webkit-transform: translateY(-50%);
+			left: 100%;
+			width: 0;
+			height: 0;
+			border-style: solid;
+		}
+		&:before {
+			border-width: 9px 0 9px 11px;
+			border-color: transparent transparent transparent #e9e9e9;
+		}
+		&:after {
+			border-width: 8px 0 8px 10px;
+			border-color: transparent transparent transparent #fff;
+		}
+		i {
+			font-size: 12px;
+			padding-right: 8px;
+			margin-right: 7px;
+			border-right: 1px solid #e9e9e9;
+			font-weight: 100;
+		}
+	}
+	.list-inline {
+		margin: 0;
+		padding: 0;
+		li {
+			display: inline-block;
+			padding-right: 5px;
+			margin-bottom: 0;
+			a {
+				@include display-flex-center;
+				color: $soft-black;
+				font-size: 16px;
+				height: 35px;
+				width: 35px;
+				border: 1px solid #e9e9e9;
+				border-radius: 2px;
+				cursor: pointer;
+				&:hover,
+				&:focus {
+					color: $black;
+				}
+				&.facebook {
+					color: $facebook;
+					&:hover,
+					&:focus {
+						color: $facebook;
+					}
+				}
+				&.twitter {
+					color: $twitter;
+					&:hover,
+					&:focus {
+						color: $twitter;
+					}
+				}
+				&.linkedin {
+					color: $linkedin;
+					&:hover,
+					&:focus {
+						color: $linkedin;
+					}
+				}
+				&.pinterest {
+					color: $pinterest;
+					&:hover,
+					&:focus {
+						color: $pinterest;
+					}
+				}
+			}
+		}
+	}
+}

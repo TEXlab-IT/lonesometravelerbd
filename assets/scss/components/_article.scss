@@ -1,0 +1,281 @@
+article {
+	display: block;
+	margin-bottom: 30px;
+
+	.post-thumbnail {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		img {
+			max-width: 100%;
+			height: auto;
+			object-fit: cover;
+		}
+	}
+	.post-category {
+		span, a {
+			color: $black;
+			display: inline-block;
+			font-family: $primary_font;
+			text-transform: uppercase;
+			font-weight: 400;
+		}
+		span {
+			@include bordered($primary, 1px);
+			padding: 4px 6px;
+		}
+	}
+	.entry-title {
+		color: $black;
+		font-family: $primary_font;
+		font-weight: 700;
+		a {
+			color: $black;
+			font-family: inherit;
+		}
+	}
+	.entry-subtitle {
+		color: $black;
+		font-family: $secondary_font;
+		font-weight: 500;
+		a {
+			color: $soft-black;
+		}
+	}
+	.entry-meta {
+		font-family: $primary_font;
+		font-weight: 400;
+		.posted-on,
+		.byline {
+			color: $soft-black;
+			a {
+				color: $soft-black;
+				text-transform: uppercase;
+			}
+		}
+		.pipe {
+			color: $primary;
+			margin: 0 8px;
+		}
+	}
+	&.full-grid,
+	&.grid-layout {
+		.post-thumbnail {
+			width: 100%;
+		}
+	}
+	&.full-grid,
+	&.grid-layout,
+	&.list-layout,
+	&.small-list {
+		.post-thumbnail {
+			background: $white-smoke;
+			a {
+				width: 100%;
+				height: 100%;
+				img {
+					width: 100%;
+					height: 100%;
+					object-position: center;
+				}
+			}
+		}
+	}
+	&.grid-layout {
+		height: 100%;
+		.post-thumbnail {
+			height: 310px;
+			margin-bottom: 15px;
+			@include mq(sm, md) {
+				height: 260px;
+			}
+			@include mq(false, sm) {
+				height: 240px;
+			}
+		}
+
+		.post-category {
+			margin-bottom: 10px;
+		}
+		.entry-title {
+			font-size: 24px;
+			line-height: 30px;
+			margin-bottom: 15px;
+			@include mq(false, sm) {
+				font-size: 24px;
+				line-height: 30px;
+			}
+		}
+		.entry-subtitle {
+			font-size: 20px;
+			line-height: 30px;
+			margin-bottom: 0;
+			@include mq(false, sm) {
+				font-size: 16px;
+				line-height: 24px;
+			}
+		}
+		&.mid {
+			margin-bottom: 20px;
+			.post-thumbnail {
+				height: 204px;
+				@include mq(xxs, md) {
+					height: 180px;
+				}
+				@include mq(false, xxs) {
+					height: 240px;
+				}
+			}
+			.entry-header {
+				.entry-title {
+					margin-bottom: 0;
+				}
+			}
+		}
+		&.small {
+			.post-thumbnail {
+				height: 148px;
+				margin-bottom: 12px;
+				@include mq(xs, md) {
+					height: 120px;
+				}
+				@include mq(false, xxs) {
+					height: 110px;
+				}
+			}
+			.post-category {
+				span, a {
+					font-size: 12px;
+					line-height: 20px;
+					letter-spacing: 2.4px;
+					@include mq(false, xs) {
+						font-size: 11px;
+						line-height: 18px;
+						letter-spacing: 2.2px;
+					}
+				}
+			}
+			.entry-title {
+				font-size: 20px;
+				line-height: 28px;
+				letter-spacing: 0.88px;
+				margin-bottom: 15px;
+				@include mq(false, xs) {
+					font-size: 16px;
+					line-height: 20px;
+					letter-spacing: 0.64px;
+				}
+			}
+		}
+	}
+	&.full-grid {
+		.post-thumbnail {
+			height: 434px;
+			margin-bottom: 20px;
+			@include mq(sm, md) {
+				height: 360px;
+			}
+			@include mq(xxs, sm) {
+				height: 320px;
+			}
+			@include mq(false, xxs) {
+				height: 240px;
+			}
+		}
+		.post-category {
+			margin-bottom: 12px;
+			a {
+				font-size: 15px;
+				line-height: 22px;
+				letter-spacing: 3px;
+			}
+		}
+		.entry-title {
+			font-size: 28px;
+			line-height: 35px;
+			letter-spacing: 1.12px;
+			margin-bottom: 15px;
+			@include mq(false, sm) {
+				font-size: 24px;
+				line-height: 32px;
+			}
+		}
+		.entry-subtitle {
+			font-size: 24px;
+			line-height: 35px;
+			letter-spacing: -0.12px;
+			@include mq(false, sm) {
+				font-size: 16px;
+				line-height: 20px;
+			}
+		}
+	}
+	&.list-layout {
+		overflow: hidden;
+		.post-thumbnail {
+			float: left;
+			width: 262px;
+			height: 148px;
+			@include mq(xs, sm) {
+				width: 210px;
+				height: 128px;
+			}
+			@include mq( false, xxs ) {
+				float: unset;
+				max-width: 100%;
+				width: 100%;
+				height: 220px;
+				margin-bottom: 15px;
+			}
+		}
+		.entry-header {
+			overflow: hidden;
+			padding-left: 25px;
+			@include mq( false, xxs ) {
+				padding-left: 0;
+			}
+		}
+		.post-category {
+			margin-bottom: 8px;
+			span, a {
+				font-size: 12px;
+				line-height: 20px;
+				letter-spacing: 2.4px;
+			}
+		}
+		.entry-title {
+			font-size: 22px;
+			line-height: 28px;
+			margin-bottom: 15px;
+			letter-spacing: 0.88px;
+			@include mq(false, sm) {
+				font-size: 20px;
+			}
+		}
+		.entry-subtitle {
+			font-size: 15px;
+			line-height: 20px;
+			letter-spacing: -0.07px;
+			margin-bottom: 0;
+		}
+	}
+	&.small-list {
+		overflow: hidden;
+		margin-bottom: 15px;
+		.post-thumbnail {
+			float: left;
+			width: 84px;
+			height: 68px;
+		}
+		.entry-header {
+			overflow: hidden;
+			padding-left: 12px;
+		}
+		.entry-title {
+			font-size: 16px;
+			line-height: 20px;
+			letter-spacing: 0.6px;
+		}
+	}
+}

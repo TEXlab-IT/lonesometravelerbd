@@ -1,0 +1,90 @@
+.search-form-area {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-bottom: 20px;
+	.es-search-form {
+		position: relative;
+		width: 940px;
+		@include mq(false, md) {
+			width: 750px;
+		}
+		@include mq(false, sm) {
+			width: 600px;
+		}
+		@include mq(false, xs) {
+			width: 100%;
+		}
+		input.search {
+			width: 100%;
+			height: 70px;
+			background: transparent;
+			padding: 12px 70px 12px 50px;
+			font-size: 16px;
+			line-height: 22px;
+			font-family: $primary_font;
+			font-weight: 400;
+			color: $black;
+			border: 1px solid $darkgray;
+			opacity: 1;
+			outline: none;
+			@include mq(false, sm) {
+				font-size: 16px;
+			}
+			&::placeholder {
+				opacity: 0.3;
+			}
+
+			@include mq(false, md) {
+				height: 60px;
+			}
+			@include mq(false, xs) {
+				height: 55px;
+			}
+		}
+		.search-inner-icon {
+			position: absolute;
+			background: 0 0;
+			border: 0;
+			padding: 0;
+			height: 70px;
+			width: 50px;
+			i {
+				color: $primary;
+				font-size: 20px;
+			}
+			@include mq(false, md) {
+				height: 60px;
+			}
+			@include mq(false, xs) {
+				height: 55px;
+			}
+		}
+		.search-inner-btn {
+			position: absolute;
+			background: $secondary;
+			color: $black;
+			border: 1px solid $secondary;
+			padding: 5px 10px;
+			font-family: $primary_font;
+			font-weight: 700;
+			font-size: 20px;
+			line-height: 34px;
+			text-transform: uppercase;
+			cursor: pointer;
+			top: 12px;
+			right: 12px;
+			@include mq(false, md) {
+				padding: 4px 10px;
+				line-height: 30px;
+				top: 10px;
+				right: 10px;
+			}
+			@include mq(false, xs) {
+				padding: 2px 10px;
+				top: 10px;
+				right: 10px;
+			}
+		}
+	}
+}

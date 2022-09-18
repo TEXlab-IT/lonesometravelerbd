@@ -1,0 +1,52 @@
+.gform_wrapper {
+	.gform_body {
+		.gform_fields {
+			.gfield {
+				.gfield_label {
+					color: $black;
+					font-size: 16px;
+					line-height: 20px;
+					margin-bottom: 0;
+				}
+				select, input[type='text'], input[type='search'] {
+					width: 100%;
+					padding: 6px 15px !important;
+					font-size: 20px;
+					border: 1px solid $gray;
+					height: 45px;
+					color: $black;
+					font-family: $primary_font;
+					margin-bottom: 0 !important;
+					@include mq(false, sm) {
+						font-size: 16px;
+						text-align: left;
+					}
+				}
+			}
+		}
+	}
+	.gform_footer {
+		input[type='submit'] {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $white;
+			height: 45px;
+			width: 250px !important;
+			font-size: 16px !important;
+			line-height: 20px;
+			letter-spacing: 0;
+			font-family: $primary_font;
+			background: $primary;
+			border: 1px solid $primary;
+			font-weight: 700;
+			text-transform: uppercase;
+			&:hover,
+			&:focus {
+				background: $deep-sky-blue;
+				border: 1px solid $deep-sky-blue;
+				color: $white;
+			}
+		}
+	}
+}
