@@ -1,8 +1,8 @@
 <?php
 /**
- * ThemePlate Theme Customizer
+ * Lonesome Traveler Theme Customizer
  *
- * @package themeplate
+ * @package lonesometraveler
  */
 
 // Exit if accessed directly.
@@ -13,35 +13,35 @@ defined( 'ABSPATH' ) || exit;
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-if ( ! function_exists( 'themeplate_customize_register' ) ) {
+if ( ! function_exists( 'lonesometraveler_customize_register' ) ) {
 	/**
 	 * Register basic customizer support.
 	 *
 	 * @param object $wp_customize Customizer reference.
 	 */
-	function themeplate_customize_register( $wp_customize ) {
+	function lonesometraveler_customize_register( $wp_customize ) {
 		$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 		$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 		$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 	}
 }
-add_action( 'customize_register', 'themeplate_customize_register' );
+add_action( 'customize_register', 'lonesometraveler_customize_register' );
 
-if ( ! function_exists( 'themeplate_theme_customize_register' ) ) {
+if ( ! function_exists( 'lonesometraveler_theme_customize_register' ) ) {
 	/**
 	 * Register individual settings through customizer's API.
 	 *
 	 * @param WP_Customize_Manager $wp_customize Customizer reference.
 	 */
-	function themeplate_theme_customize_register( $wp_customize ) {
+	function lonesometraveler_theme_customize_register( $wp_customize ) {
 
 		// Theme layout settings.
 		$wp_customize->add_section(
-			'themeplate_theme_layout_options',
+			'lonesometraveler_theme_layout_options',
 			array(
-				'title'       => __( 'Theme Layout Settings', 'themeplate' ),
+				'title'       => __( 'Theme Layout Settings', 'lonesometraveler' ),
 				'capability'  => 'edit_theme_options',
-				'description' => __( 'Container width and sidebar defaults', 'themeplate' ),
+				'description' => __( 'Container width and sidebar defaults', 'lonesometraveler' ),
 				'priority'    => 160,
 			)
 		);
@@ -53,9 +53,9 @@ if ( ! function_exists( 'themeplate_theme_customize_register' ) ) {
 		 * @param WP_Customize_Setting $setting Setting instance.
 		 * @return string Sanitized slug if it is a valid choice; otherwise, the setting default.
 		 */
-		function themeplate_theme_slug_sanitize_select( $input, $setting ) {
+		function lonesometraveler_theme_slug_sanitize_select( $input, $setting ) {
 
-			// Ensure input is a slug (lowercase alphanumeric characters, dashes and themeplate are allowed only).
+			// Ensure input is a slug (lowercase alphanumeric characters, dashes and lonesometraveler are allowed only).
 			$input = sanitize_key( $input );
 
 			// Get the list of possible select options.
@@ -67,11 +67,11 @@ if ( ! function_exists( 'themeplate_theme_customize_register' ) ) {
 		}
 
 		$wp_customize->add_setting(
-			'themeplate_container_type',
+			'lonesometraveler_container_type',
 			array(
 				'default'           => 'container',
 				'type'              => 'theme_mod',
-				'sanitize_callback' => 'themeplate_theme_slug_sanitize_select',
+				'sanitize_callback' => 'lonesometraveler_theme_slug_sanitize_select',
 				'capability'        => 'edit_theme_options',
 			)
 		);
@@ -79,16 +79,16 @@ if ( ! function_exists( 'themeplate_theme_customize_register' ) ) {
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
-				'themeplate_container_type',
+				'lonesometraveler_container_type',
 				array(
-					'label'       => __( 'Container Width', 'themeplate' ),
-					'description' => __( 'Choose between Bootstrap\'s container and container-fluid', 'themeplate' ),
-					'section'     => 'themeplate_theme_layout_options',
-					'settings'    => 'themeplate_container_type',
+					'label'       => __( 'Container Width', 'lonesometraveler' ),
+					'description' => __( 'Choose between Bootstrap\'s container and container-fluid', 'lonesometraveler' ),
+					'section'     => 'lonesometraveler_theme_layout_options',
+					'settings'    => 'lonesometraveler_container_type',
 					'type'        => 'select',
 					'choices'     => array(
-						'container'       => __( 'Fixed width container', 'themeplate' ),
-						'container-fluid' => __( 'Full width container', 'themeplate' ),
+						'container'       => __( 'Fixed width container', 'lonesometraveler' ),
+						'container-fluid' => __( 'Full width container', 'lonesometraveler' ),
 					),
 					'priority'    => '10',
 				)
@@ -96,7 +96,7 @@ if ( ! function_exists( 'themeplate_theme_customize_register' ) ) {
 		);
 
 		$wp_customize->add_setting(
-			'themeplate_sidebar_position',
+			'lonesometraveler_sidebar_position',
 			array(
 				'default'           => 'right',
 				'type'              => 'theme_mod',
@@ -108,22 +108,22 @@ if ( ! function_exists( 'themeplate_theme_customize_register' ) ) {
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
-				'themeplate_sidebar_position',
+				'lonesometraveler_sidebar_position',
 				array(
-					'label'             => __( 'Sidebar Positioning', 'themeplate' ),
+					'label'             => __( 'Sidebar Positioning', 'lonesometraveler' ),
 					'description'       => __(
 						'Set sidebar\'s default position. Can either be: right, left, both or none. Note: this can be overridden on individual pages.',
-						'themeplate'
+						'lonesometraveler'
 					),
-					'section'           => 'themeplate_theme_layout_options',
-					'settings'          => 'themeplate_sidebar_position',
+					'section'           => 'lonesometraveler_theme_layout_options',
+					'settings'          => 'lonesometraveler_sidebar_position',
 					'type'              => 'select',
-					'sanitize_callback' => 'themeplate_theme_slug_sanitize_select',
+					'sanitize_callback' => 'lonesometraveler_theme_slug_sanitize_select',
 					'choices'           => array(
-						'right' => __( 'Right sidebar', 'themeplate' ),
-						'left'  => __( 'Left sidebar', 'themeplate' ),
-						'both'  => __( 'Left & Right sidebars', 'themeplate' ),
-						'none'  => __( 'No sidebar', 'themeplate' ),
+						'right' => __( 'Right sidebar', 'lonesometraveler' ),
+						'left'  => __( 'Left sidebar', 'lonesometraveler' ),
+						'both'  => __( 'Left & Right sidebars', 'lonesometraveler' ),
+						'none'  => __( 'No sidebar', 'lonesometraveler' ),
 					),
 					'priority'          => '20',
 				)
@@ -151,18 +151,18 @@ if ( ! function_exists( 'themeplate_theme_customize_register' ) ) {
 		) );
 	}
 }
-add_action( 'customize_register', 'themeplate_theme_customize_register' );
+add_action( 'customize_register', 'lonesometraveler_theme_customize_register' );
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-if ( ! function_exists( 'themeplate_customize_preview_js' ) ) {
+if ( ! function_exists( 'lonesometraveler_customize_preview_js' ) ) {
 	/**
 	 * Setup JS integration for live previewing.
 	 */
-	function themeplate_customize_preview_js() {
+	function lonesometraveler_customize_preview_js() {
 		wp_enqueue_script(
-			'themeplate_customizer',
+			'lonesometraveler_customizer',
 			get_template_directory_uri() . '/js/customizer.js',
 			array( 'customize-preview' ),
 			'20130508',
@@ -170,4 +170,4 @@ if ( ! function_exists( 'themeplate_customize_preview_js' ) ) {
 		);
 	}
 }
-add_action( 'customize_preview_init', 'themeplate_customize_preview_js' );
+add_action( 'customize_preview_init', 'lonesometraveler_customize_preview_js' );

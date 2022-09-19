@@ -2,15 +2,15 @@
 /**
  * Pagination layout
  *
- * @package themeplate
+ * @package lonesometraveler
  */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if ( ! function_exists( 'themeplate_pagination' ) ) {
+if ( ! function_exists( 'lonesometraveler_pagination' ) ) {
 
-	function themeplate_pagination( $args = array(), $class = 'pagination' ) {
+	function lonesometraveler_pagination( $args = array(), $class = 'pagination' ) {
 
 		if ( $GLOBALS['wp_query']->max_num_pages <= 1 ) {
 			return;
@@ -21,9 +21,9 @@ if ( ! function_exists( 'themeplate_pagination' ) ) {
 			array(
 				'mid_size'           => 2,
 				'prev_next'          => true,
-				'prev_text'          => __( 'PREV', 'themeplate' ),
-				'next_text'          => __( 'NEXT >', 'themeplate' ),
-				'screen_reader_text' => __( 'posts navigation', 'themeplate' ),
+				'prev_text'          => __( 'PREV', 'lonesometraveler' ),
+				'next_text'          => __( 'NEXT >', 'lonesometraveler' ),
+				'screen_reader_text' => __( 'posts navigation', 'lonesometraveler' ),
 				'type'               => 'array',
 				'current'            => max( 1, get_query_var( 'paged' ) ),
 			)
@@ -59,14 +59,14 @@ if ( ! function_exists( 'themeplate_pagination' ) ) {
  * Show Paginate Number
  */
 
-if ( ! function_exists( 'themeplate_pagination_number' ) ) {
-	function themeplate_pagination_number() {
+if ( ! function_exists( 'lonesometraveler_pagination_number' ) ) {
+	function lonesometraveler_pagination_number() {
 		global $wp_query;
 		$current = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
 		$total   = isset( $wp_query->max_num_pages ) ? $wp_query->max_num_pages : 1;
 		if ( $total > 1 ) :
 			echo '<div class="pagination-number">';
-				echo '<span class="total-page">'. esc_html__( 'Page', 'themeplate' ).' ' .$current. ' '. esc_html__( 'of', 'themeplate' ).' ' .$total. '</span>';
+				echo '<span class="total-page">'. esc_html__( 'Page', 'lonesometraveler' ).' ' .$current. ' '. esc_html__( 'of', 'lonesometraveler' ).' ' .$total. '</span>';
 			echo '</div>';
 		endif;
 	}

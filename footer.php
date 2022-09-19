@@ -4,7 +4,7 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package themeplate
+ * @package lonesometraveler
  */
 
 // Exit if accessed directly.
@@ -26,7 +26,7 @@ defined( 'ABSPATH' ) || exit;
 		<div class="site-info-area">
 			<div class="container">
 				<div class="site-info">
-					<?php themeplate_site_info(); ?>
+					<?php lonesometraveler_site_info(); ?>
 				</div><!-- .site-info -->
 			</div>
 		</div>

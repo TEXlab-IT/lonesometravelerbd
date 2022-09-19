@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package themeplate
+ * @package lonesometraveler
  */
 
 //phpcs:ignore PHPCompatibility.Syntax.NewShortArray.Found
@@ -12,9 +12,9 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-add_filter( 'body_class', 'themeplate_body_classes' );
+add_filter( 'body_class', 'lonesometraveler_body_classes' );
 
-if ( ! function_exists( 'themeplate_body_classes' ) ) {
+if ( ! function_exists( 'lonesometraveler_body_classes' ) ) {
 	/**
 	 * Adds custom classes to the array of body classes.
 	 *
@@ -22,7 +22,7 @@ if ( ! function_exists( 'themeplate_body_classes' ) ) {
 	 *
 	 * @return array
 	 */
-	function themeplate_body_classes( $classes ) {
+	function lonesometraveler_body_classes( $classes ) {
 		// Adds a class of group-blog to blogs with more than 1 published author.
 		if ( is_multi_author() ) {
 			$classes[] = 'group-blog';
@@ -37,9 +37,9 @@ if ( ! function_exists( 'themeplate_body_classes' ) ) {
 }
 
 // Removes tag class from the body_class array to avoid Bootstrap markup styling issues.
-add_filter( 'body_class', 'themeplate_adjust_body_class' );
+add_filter( 'body_class', 'lonesometraveler_adjust_body_class' );
 
-if ( ! function_exists( 'themeplate_adjust_body_class' ) ) {
+if ( ! function_exists( 'lonesometraveler_adjust_body_class' ) ) {
 	/**
 	 * Setup body classes.
 	 *
@@ -47,7 +47,7 @@ if ( ! function_exists( 'themeplate_adjust_body_class' ) ) {
 	 *
 	 * @return mixed
 	 */
-	function themeplate_adjust_body_class( $classes ) {
+	function lonesometraveler_adjust_body_class( $classes ) {
 
 		foreach ( $classes as $key => $value ) {
 			if ( 'tag' === $value ) {
@@ -61,9 +61,9 @@ if ( ! function_exists( 'themeplate_adjust_body_class' ) ) {
 }
 
 // Filter custom logo with correct classes.
-add_filter( 'get_custom_logo', 'themeplate_change_logo_class' );
+add_filter( 'get_custom_logo', 'lonesometraveler_change_logo_class' );
 
-if ( ! function_exists( 'themeplate_change_logo_class' ) ) {
+if ( ! function_exists( 'lonesometraveler_change_logo_class' ) ) {
 	/**
 	 * Replaces logo CSS class.
 	 *
@@ -71,7 +71,7 @@ if ( ! function_exists( 'themeplate_change_logo_class' ) ) {
 	 *
 	 * @return mixed
 	 */
-	function themeplate_change_logo_class( $html ) {
+	function lonesometraveler_change_logo_class( $html ) {
 
 		$html = str_replace( 'class="custom-logo"', 'class="img-fluid"', $html );
 		$html = str_replace( 'class="custom-logo-link"', 'class="navbar-brand custom-logo-link"', $html );
@@ -85,11 +85,11 @@ if ( ! function_exists( 'themeplate_change_logo_class' ) ) {
  * Display navigation to next/previous post when applicable.
  */
 
-if ( ! function_exists( 'themeplate_post_nav' ) ) {
+if ( ! function_exists( 'lonesometraveler_post_nav' ) ) {
 	/**
 	 * Prints post navigation
 	 */
-	function themeplate_post_nav() {
+	function lonesometraveler_post_nav() {
 		// Don't print empty markup if there's nowhere to navigate.
 		$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 		$next     = get_adjacent_post( false, '', false );
@@ -99,14 +99,14 @@ if ( ! function_exists( 'themeplate_post_nav' ) ) {
 		}
 		?>
         <nav class="container navigation post-navigation">
-            <h2 class="sr-only"><?php esc_html_e( 'Post navigation', 'themeplate' ); ?></h2>
+            <h2 class="sr-only"><?php esc_html_e( 'Post navigation', 'lonesometraveler' ); ?></h2>
             <div class="row nav-links justify-content-between">
 				<?php
 				if ( get_previous_post_link() ) {
-					previous_post_link( '<span class="nav-previous">%link</span>', _x( '<i class="fa fa-angle-left"></i>&nbsp;%title', 'Previous post link', 'themeplate' ) );
+					previous_post_link( '<span class="nav-previous">%link</span>', _x( '<i class="fa fa-angle-left"></i>&nbsp;%title', 'Previous post link', 'lonesometraveler' ) );
 				}
 				if ( get_next_post_link() ) {
-					next_post_link( '<span class="nav-next">%link</span>', _x( '%title&nbsp;<i class="fa fa-angle-right"></i>', 'Next post link', 'themeplate' ) );
+					next_post_link( '<span class="nav-next">%link</span>', _x( '%title&nbsp;<i class="fa fa-angle-right"></i>', 'Next post link', 'lonesometraveler' ) );
 				}
 				?>
             </div><!-- .nav-links -->
@@ -115,29 +115,29 @@ if ( ! function_exists( 'themeplate_post_nav' ) ) {
 	}
 }
 
-if ( ! function_exists( 'themeplate_pingback' ) ) {
+if ( ! function_exists( 'lonesometraveler_pingback' ) ) {
 	/**
 	 * Add a pingback url auto-discovery header for single posts of any post type.
 	 */
-	function themeplate_pingback() {
+	function lonesometraveler_pingback() {
 		if ( is_singular() && pings_open() ) {
 			echo '<link rel="pingback" href="' . esc_url( get_bloginfo( 'pingback_url' ) ) . '">' . "\n";
 		}
 	}
 }
-add_action( 'wp_head', 'themeplate_pingback' );
+add_action( 'wp_head', 'lonesometraveler_pingback' );
 
-if ( ! function_exists( 'themeplate_mobile_web_app_meta' ) ) {
+if ( ! function_exists( 'lonesometraveler_mobile_web_app_meta' ) ) {
 	/**
 	 * Add mobile-web-app meta.
 	 */
-	function themeplate_mobile_web_app_meta() {
+	function lonesometraveler_mobile_web_app_meta() {
 		echo '<meta name="mobile-web-app-capable" content="yes">' . "\n";
 		echo '<meta name="apple-mobile-web-app-capable" content="yes">' . "\n";
 		echo '<meta name="apple-mobile-web-app-title" content="' . esc_attr( get_bloginfo( 'name' ) ) . ' - ' . esc_attr( get_bloginfo( 'description' ) ) . '">' . "\n";
 	}
 }
-add_action( 'wp_head', 'themeplate_mobile_web_app_meta' );
+add_action( 'wp_head', 'lonesometraveler_mobile_web_app_meta' );
 
 
 /**
@@ -148,8 +148,8 @@ add_action( 'wp_head', 'themeplate_mobile_web_app_meta' );
  *
  * @return array|bool|null|WP_Error|WP_Term
  */
-if ( ! function_exists( 'themeplate_get_primary_term' ) ) {
-	function themeplate_get_primary_term( $post_id = false, $taxonomy = 'category' ) {
+if ( ! function_exists( 'lonesometraveler_get_primary_term' ) ) {
+	function lonesometraveler_get_primary_term( $post_id = false, $taxonomy = 'category' ) {
 		if ( ! $taxonomy ) {
 			return false;
 		}
@@ -236,7 +236,7 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 }
 
 
-// themeplate social media function
+// lonesometraveler social media function
 function es_social_media() {
 	// If ACF class is not available / active
 	if (!class_exists('acf')) {
@@ -264,7 +264,7 @@ function es_social_media() {
 	echo $html;
 }
 
-function themeplate_set_post_views( $postID ) {
+function lonesometraveler_set_post_views( $postID ) {
 
     $count_key = 'es_post_views_count';
     $count     = get_post_meta( $postID, $count_key, true );
@@ -280,8 +280,8 @@ function themeplate_set_post_views( $postID ) {
 }
 
 // Get post view number
-if ( ! function_exists( 'themeplate_get_post_views' ) ) {
-	function themeplate_get_post_views( $postID ) {
+if ( ! function_exists( 'lonesometraveler_get_post_views' ) ) {
+	function lonesometraveler_get_post_views( $postID ) {
 		$count_key = 'es_post_views_count';
 		$count     = get_post_meta( $postID, $count_key, true );
 		if ( $count == '' ) {
@@ -304,15 +304,15 @@ if ( ! function_exists( 'themeplate_get_post_views' ) ) {
 *
 * @return string
 */
-if ( ! function_exists( 'themeplate_get_share_link' ) ) {
-  function themeplate_get_share_link( $post_id, $type ) {
+if ( ! function_exists( 'lonesometraveler_get_share_link' ) ) {
+  function lonesometraveler_get_share_link( $post_id, $type ) {
      $url = '';
      switch ( $type ) {
         case 'facebook':
            $url = add_query_arg(
               [
                  'u'       => get_the_permalink( $post_id ),
-                 '[title]' => apply_filters( 'themeplate_share_fb_title', get_the_title( $post_id ) ),
+                 '[title]' => apply_filters( 'lonesometraveler_share_fb_title', get_the_title( $post_id ) ),
               ], 'http://www.facebook.com/sharer.php'
            );
            break;
@@ -320,7 +320,7 @@ if ( ! function_exists( 'themeplate_get_share_link' ) ) {
            $url = add_query_arg(
               [
                  'url'  => get_the_permalink( $post_id ),
-                 'text' => apply_filters( 'themeplate_share_twitter_text', get_the_title( $post_id ) ),
+                 'text' => apply_filters( 'lonesometraveler_share_twitter_text', get_the_title( $post_id ) ),
                  'via'  => '',
               ], 'http://twitter.com/share'
            );
@@ -329,7 +329,7 @@ if ( ! function_exists( 'themeplate_get_share_link' ) ) {
            $url = add_query_arg(
               [
                  'url'     => get_the_permalink( $post_id ),
-                 'title'   => apply_filters( 'themeplate_share_twitter_text', wp_strip_all_tags( get_the_title( $post_id ) ) ),
+                 'title'   => apply_filters( 'lonesometraveler_share_twitter_text', wp_strip_all_tags( get_the_title( $post_id ) ) ),
                  'summary' => get_post_field( 'the_excerpt', $post_id ),
               ], 'https://www.linkedin.com/shareArticle?mini=true'
            );
@@ -339,7 +339,7 @@ if ( ! function_exists( 'themeplate_get_share_link' ) ) {
 			   [
 				   'url'     => get_the_permalink( $post_id ),
 				   'media'   => wp_get_attachment_url( get_post_thumbnail_id() ),
-				   'description'   => apply_filters( 'themeplate_share_twitter_text', wp_strip_all_tags( get_the_title( $post_id ) ) ),
+				   'description'   => apply_filters( 'lonesometraveler_share_twitter_text', wp_strip_all_tags( get_the_title( $post_id ) ) ),
 			   ], 'https://pinterest.com/pin/create/button'
 		   );
 		   break;
@@ -358,8 +358,8 @@ if ( ! function_exists( 'themeplate_get_share_link' ) ) {
   }
 }
 
-if (!function_exists('themeplate_post_social_share')) {
-  function themeplate_post_social_share($post_id, array $socials, $title = null) {
+if (!function_exists('lonesometraveler_post_social_share')) {
+  function lonesometraveler_post_social_share($post_id, array $socials, $title = null) {
      $html = '<div class="social-share">';
      if ($title) {
         $html .= '<span class="socila-share-text"><i class="fa fa-share-alt"></i>' . $title . '</span>';
@@ -374,7 +374,7 @@ if (!function_exists('themeplate_post_social_share')) {
         } elseif ('print' === $social) {
            $html .= "<a href='https://www.printfriendly.com' class='printfriendly' onclick='window.print(); return false;'><i class='fa fa-{$social}'></i></a>";
         } else {
-           $html .= "<a href='" . themeplate_get_share_link($post_id, $social) . "' target='_blank' class='{$social}'><i class='fa fa-{$social}'></i></a>";
+           $html .= "<a href='" . lonesometraveler_get_share_link($post_id, $social) . "' target='_blank' class='{$social}'><i class='fa fa-{$social}'></i></a>";
         }
         $html .= '</li>';
      }
@@ -386,9 +386,9 @@ if (!function_exists('themeplate_post_social_share')) {
 
 function es_section_title( $title, $class="", $url= null ) {
 	if( ! empty( $url ) ) {
-		echo sprintf('<div class="section-header"><h2 class="section-title %s"><a href="%s">%s</a></h2></div>',$class, $url, esc_html__($title, 'themeplate'));
+		echo sprintf('<div class="section-header"><h2 class="section-title %s"><a href="%s">%s</a></h2></div>',$class, $url, esc_html__($title, 'lonesometraveler'));
 	}else {
-		echo sprintf('<div class="section-header"><h2 class="section-title %s">%s</h2></div>',$class, esc_html__($title, 'themeplate'));
+		echo sprintf('<div class="section-header"><h2 class="section-title %s">%s</h2></div>',$class, esc_html__($title, 'lonesometraveler'));
 	}
 
 }
@@ -404,7 +404,7 @@ function es_get_first_sentence($content) {
 /**
  * Displays a custom logo.
  */
-function everstep_custom_logo() {
+function lonesometraveler_custom_logo() {
 	if ( ! has_custom_logo() ) {
 		$logo_url = THEME_ASSETS_URL. '/images/site-logo.jpg';
 		$logo = sprintf('<img width="402" height="135" src="%s" alt="%s" />', $logo_url, get_bloginfo( 'name' ) );
@@ -453,8 +453,8 @@ function es_add_login_logout_link($items, $args) {
  * Custom function for ACF
  */
 
-if ( ! function_exists( 'themeplate_get_field' ) ) {
-	function themeplate_get_field( $field_name, $id = null ) {
+if ( ! function_exists( 'lonesometraveler_get_field' ) ) {
+	function lonesometraveler_get_field( $field_name, $id = null ) {
 
 		if ( class_exists( 'acf' ) ) {
 

@@ -2,7 +2,7 @@
 /**
  * Partial template for content in page.php
  *
- * @package themeplate
+ * @package lonesometraveler
  */
 
 // Exit if accessed directly.
@@ -27,7 +27,7 @@ global $post;
 		<?php
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'themeplate' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'lonesometraveler' ),
 				'after'  => '</div>',
 			)
 		);
@@ -37,7 +37,7 @@ global $post;
 
 	<footer class="entry-footer">
 
-		<?php edit_post_link( __( 'Edit', 'themeplate' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'lonesometraveler' ), '<span class="edit-link">', '</span>' ); ?>
 
 	</footer><!-- .entry-footer -->
 

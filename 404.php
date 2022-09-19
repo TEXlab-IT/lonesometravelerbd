@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (not found)
  *
- * @package themeplate
+ * @package lonesometraveler
  */
 
 // Exit if accessed directly.
@@ -23,8 +23,8 @@ get_header();
 
 						<header class="page-header">
 
-							<h1 class="page-title"><?php esc_html_e( '404 Error', 'themeplate' ); ?></h1>
-							<h4 class="sub-title"><?php esc_html_e( 'Oops, we can’t seem to find the page you are looking for.', 'themeplate' ); ?></h4>
+							<h1 class="page-title"><?php esc_html_e( '404 Error', 'lonesometraveler' ); ?></h1>
+							<h4 class="sub-title"><?php esc_html_e( 'Oops, we can’t seem to find the page you are looking for.', 'lonesometraveler' ); ?></h4>
 
 						</header><!-- .page-header -->
 
@@ -32,7 +32,7 @@ get_header();
 							<?php get_search_form(); ?>
 						</div><!-- .page-content -->
                         <div class="text-center mt-5 mb-5">
-                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="back-to-btn"><i class="fa fa-angle-double-left"></i> <?php _e( 'Back To Home', 'themeplate' ); ?></a>
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="back-to-btn"><i class="fa fa-angle-double-left"></i> <?php _e( 'Back To Home', 'lonesometraveler' ); ?></a>
                         </div>
 
 					</section><!-- .error-404 -->

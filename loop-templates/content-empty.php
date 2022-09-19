@@ -2,7 +2,7 @@
 /**
  * Content empty partial template
  *
- * @package themeplate
+ * @package lonesometraveler
  */
 
 // Exit if accessed directly.

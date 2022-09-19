@@ -2,7 +2,7 @@
 /**
  * Theme basic setup
  *
- * @package themeplate
+ * @package lonesometraveler
  */
 
 // Exit if accessed directly.
@@ -13,9 +13,9 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */ //phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 }
 
-add_action( 'after_setup_theme', 'themeplate_setup' );
+add_action( 'after_setup_theme', 'lonesometraveler_setup' );
 
-if ( ! function_exists( 'themeplate_setup' ) ) {
+if ( ! function_exists( 'lonesometraveler_setup' ) ) {
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -23,14 +23,14 @@ if ( ! function_exists( 'themeplate_setup' ) ) {
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function themeplate_setup() {
+	function lonesometraveler_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on themeplate, use a find and replace
-		 * to change 'themeplate' to the name of your theme in all the template files
+		 * If you're building a theme based on lonesometraveler, use a find and replace
+		 * to change 'lonesometraveler' to the name of your theme in all the template files
 		 */
-		load_theme_textdomain( 'themeplate', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'lonesometraveler', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -46,7 +46,7 @@ if ( ! function_exists( 'themeplate_setup' ) ) {
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'primary'           => __( 'Primary Menu', 'themeplate' ),
+				'primary'           => __( 'Primary Menu', 'lonesometraveler' ),
 			)
 		);
 
@@ -106,7 +106,7 @@ if ( ! function_exists( 'themeplate_setup' ) ) {
 		add_theme_support(
 			'custom-background',
 			apply_filters(
-				'themeplate_custom_background_args',
+				'lonesometraveler_custom_background_args',
 				array(
 					'default-color' => 'ffffff',
 					'default-image' => '',
@@ -124,9 +124,9 @@ if ( ! function_exists( 'themeplate_setup' ) ) {
 }
 
 
-add_filter( 'excerpt_more', 'themeplate_custom_excerpt_more' );
+add_filter( 'excerpt_more', 'lonesometraveler_custom_excerpt_more' );
 
-if ( ! function_exists( 'themeplate_custom_excerpt_more' ) ) {
+if ( ! function_exists( 'lonesometraveler_custom_excerpt_more' ) ) {
 	/**
 	 * Removes the ... from the excerpt read more link
 	 *
@@ -134,7 +134,7 @@ if ( ! function_exists( 'themeplate_custom_excerpt_more' ) ) {
 	 *
 	 * @return string
 	 */
-	function themeplate_custom_excerpt_more( $more ) {
+	function lonesometraveler_custom_excerpt_more( $more ) {
 		if ( ! is_admin() ) {
 			$more = '';
 		}

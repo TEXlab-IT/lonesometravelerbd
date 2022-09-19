@@ -2,7 +2,7 @@
 /**
  * Single Small Post template
  *
- * @package themeplate
+ * @package lonesometraveler
  */
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
@@ -13,7 +13,7 @@ global $post;
 			<div class="row">
 				<div class="col-lg-8 mb-30">
 					<header class="entry-header">
-						<?php themeplate_post_categories(); ?>
+						<?php lonesometraveler_post_categories(); ?>
 						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 						<?php
 						if ( has_excerpt() ) {
@@ -22,11 +22,11 @@ global $post;
 						}
 						?>
 						<div class="entry-meta">
-							<?php themeplate_posted_on(); ?>
+							<?php lonesometraveler_posted_on(); ?>
 						</div>
 						<div class="social-share-area">
 							<?php
-							themeplate_post_social_share( get_the_ID(), [
+							lonesometraveler_post_social_share( get_the_ID(), [
 									'facebook',
 									'twitter',
 									'envelope-o',

@@ -2,7 +2,7 @@
 /**
  * Theme functions and definitions
  *
- * @package themeplate
+ * @package lonesometraveler
  */
 
 // Exit if accessed directly.
@@ -15,7 +15,7 @@ define( 'THEME_DIR_PATH', get_template_directory() );
 define( 'THEME_DIR_URI', get_template_directory_uri() );
 define( 'THEME_ASSETS_URL', THEME_DIR_URI . '/assets' );
 
-$themeplate_includes = array(
+$lonesometraveler_includes = array(
 	'/setup.php',                           // Theme setup and custom theme supports.
 	'/widgets.php',                         // Register widget area.
 	'/enqueue.php',                         // Enqueue scripts and styles.
@@ -29,7 +29,7 @@ $themeplate_includes = array(
 );
 
 // phpcs:disable
-foreach ( $themeplate_includes as $file ) {
+foreach ( $lonesometraveler_includes as $file ) {
 	$filepath = locate_template( 'inc' . $file );
 	if ( ! $filepath ) {
 		trigger_error( sprintf( 'Error locating /inc%s for inclusion', $file ), E_USER_ERROR );

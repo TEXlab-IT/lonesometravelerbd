@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts
  *
- * @package themeplate
+ * @package lonesometraveler
  */
 
 // Exit if accessed directly.

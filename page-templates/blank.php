@@ -4,7 +4,7 @@
  *
  * Template for displaying a blank page.
  *
- * @package themeplate
+ * @package lonesometraveler
  */
 
 // Exit if accessed directly.

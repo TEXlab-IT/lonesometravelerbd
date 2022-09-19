@@ -2,7 +2,7 @@
 /**
  * Declaring widgets
  *
- * @package themeplate
+ * @package lonesometraveler
  */
 
 // Exit if accessed directly.
@@ -14,9 +14,9 @@ defined( 'ABSPATH' ) || exit;
  *
  * @link https://developer.wordpress.org/reference/hooks/dynamic_sidebar_params/
  */
-add_filter( 'dynamic_sidebar_params', 'themeplate_widget_classes' );
+add_filter( 'dynamic_sidebar_params', 'lonesometraveler_widget_classes' );
 
-if ( ! function_exists( 'themeplate_widget_classes' ) ) {
+if ( ! function_exists( 'lonesometraveler_widget_classes' ) ) {
 	/**
 	 * Count number of visible widgets in a sidebar and add classes to widgets accordingly,
 	 * so widgets can be displayed one, two, three or four per row.
@@ -46,7 +46,7 @@ if ( ! function_exists( 'themeplate_widget_classes' ) ) {
 	 * }
 	 * @return array $params
 	 */
-	function themeplate_widget_classes( $params ) {
+	function lonesometraveler_widget_classes( $params ) {
 
 		global $sidebars_widgets;
 
@@ -88,18 +88,18 @@ if ( ! function_exists( 'themeplate_widget_classes' ) ) {
 	}
 }
 
-add_action( 'widgets_init', 'themeplate_widgets_init' );
+add_action( 'widgets_init', 'lonesometraveler_widgets_init' );
 
-if ( ! function_exists( 'themeplate_widgets_init' ) ) {
+if ( ! function_exists( 'lonesometraveler_widgets_init' ) ) {
 	/**
 	 * Initializes themes widgets.
 	 */
-	function themeplate_widgets_init() {
+	function lonesometraveler_widgets_init() {
 		register_sidebar(
 			array(
-				'name'          => __( 'Sidebar', 'themeplate' ),
+				'name'          => __( 'Sidebar', 'lonesometraveler' ),
 				'id'            => 'sidebar-1',
-				'description'   => __( 'Sidebar widget area', 'themeplate' ),
+				'description'   => __( 'Sidebar widget area', 'lonesometraveler' ),
 				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</aside>',
 				'before_title'  => '<h3 class="widget-title">',

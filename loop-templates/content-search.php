@@ -2,7 +2,7 @@
 /**
  * Search results partial template
  *
- * @package themeplate
+ * @package lonesometraveler
  */
 
 // Exit if accessed directly.
@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 	<?php } ?>
 	<header class="entry-header">
-		<?php themeplate_post_categories(); ?>
+		<?php lonesometraveler_post_categories(); ?>
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 			<p class="entry-subtitle">
 				<?php

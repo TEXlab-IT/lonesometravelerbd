@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package themeplate
+ * @package lonesometraveler
  */
 
 // Exit if accessed directly.
@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 <section class="no-results not-found">
 
 	<header class="entry-header">
-		<h3 class="entry-title"><?php esc_html_e( 'Nothing Found', 'themeplate' ); ?></h3>
+		<h3 class="entry-title"><?php esc_html_e( 'Nothing Found', 'lonesometraveler' ); ?></h3>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -27,7 +27,7 @@ defined( 'ABSPATH' ) || exit;
 			<?php
 			printf(
 				wp_kses(
-					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'themeplate' ),
+					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'lonesometraveler' ),
 					array(
 						'a' => array(
 							'href' => array(),
@@ -41,12 +41,12 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'themeplate' ); ?></p>
+			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'lonesometraveler' ); ?></p>
 			<?php
 		else :
 			?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'themeplate' ); ?></p>
+			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'lonesometraveler' ); ?></p>
 			<?php
 				get_search_form();
 		endif;

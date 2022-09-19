@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages
  *
- * @package themeplate
+ * @package lonesometraveler
  */
 
 // Exit if accessed directly.
@@ -18,7 +18,7 @@ $count 	= 0;
 				<div class="col-md-12">
 					<?php $search_key = get_search_query(); ?>
 					<header class="page-header search-page-header">
-						<h2 class="page-title text-center"><?php echo esc_html__( 'You searched for:', 'themeplate' ); ?></h2>
+						<h2 class="page-title text-center"><?php echo esc_html__( 'You searched for:', 'lonesometraveler' ); ?></h2>
 						<?php get_search_form(); ?>
 					</header><!-- .page-header -->
 				</div>
@@ -38,7 +38,7 @@ $count 	= 0;
 
 							<?php endwhile; ?>
 							<div class="pagination-area">
-								<?php themeplate_pagination(); ?>
+								<?php lonesometraveler_pagination(); ?>
 							</div>
 
 						<?php else : ?>

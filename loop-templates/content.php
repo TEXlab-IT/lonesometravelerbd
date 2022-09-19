@@ -2,7 +2,7 @@
 /**
  * Post rendering content according to caller of get_template_part
  *
- * @package themeplate
+ * @package lonesometraveler
  */
 
 // Exit if accessed directly.
@@ -29,7 +29,7 @@ $category = isset( $args['category'] ) ? $args['category'] : true;
 	<header class="entry-header">
 		<?php
 		if( $category == true ) {
-			themeplate_post_categories();
+			lonesometraveler_post_categories();
 		}
 		?>
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>

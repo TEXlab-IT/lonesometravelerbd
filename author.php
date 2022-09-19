@@ -4,7 +4,7 @@
  *
  * Learn more: https://codex.wordpress.org/Author_Templates
  *
- * @package themeplate
+ * @package lonesometraveler
  */
 
 // Exit if accessed directly.
@@ -47,7 +47,7 @@ $user_email = get_the_author_meta( 'user_email' );
 
 						<!-- End Loop -->
 						<div class="pagination-area">
-							<?php themeplate_pagination(); ?>
+							<?php lonesometraveler_pagination(); ?>
 						</div>
 					</main>
 				</div>

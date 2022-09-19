@@ -7,7 +7,7 @@
 
 
 	<!-- Set a description for this ruleset. -->
-	<description>A custom set of code standard rules for ThemePlate.</description>
+	<description>A custom set of code standard rules for Lonesome Traveler.</description>
 	<!--
 	#############################################################################
 	COMMAND LINE ARGUMENTS
@@ -63,7 +63,7 @@
 	 Multiple valid text domains can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="themeplate"/>
+			<property name="text_domain" type="array" value="lonesometraveler"/>
 		</properties>
 	</rule>
 
@@ -95,7 +95,7 @@
 	 Multiple valid prefixes can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
-			<property name="prefixes" type="array" value="themeplate"/>
+			<property name="prefixes" type="array" value="lonesometraveler"/>
 		</properties>
 	</rule>
 

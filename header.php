@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package themeplate
+ * @package lonesometraveler
  */
 
 // Exit if accessed directly.
@@ -22,7 +22,7 @@ defined( 'ABSPATH' ) || exit;
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<?php do_action( 'themeplate_wp_body_open' ); ?>
+<?php do_action( 'lonesometraveler_wp_body_open' ); ?>
 <div class="site" id="page">
 	<!-- ******************* The Navbar Area ******************* -->
 	<div id="wrapper-navbar" class="wrapper-navbar" itemscope itemtype="http://schema.org/WebSite">
@@ -30,7 +30,7 @@ defined( 'ABSPATH' ) || exit;
 			<div id="main-header" class="header-section">
 				<div class="header-logo-area">
 					<div class="site-logo">
-						<?php everstep_custom_logo(); ?>
+						<?php lonesometraveler_custom_logo(); ?>
 					</div>
 				</div>
 				<div class="header-right-area">

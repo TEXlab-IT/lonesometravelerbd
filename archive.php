@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package themeplate
+ * @package lonesometraveler
  */
 
 // Exit if accessed directly.
@@ -47,8 +47,8 @@ get_header();
 						<?php endif; ?>
 
 						<div class="pagination-area">
-							<?php themeplate_pagination_number(); ?>
-							<?php themeplate_pagination(); ?>
+							<?php lonesometraveler_pagination_number(); ?>
+							<?php lonesometraveler_pagination(); ?>
 						</div>
 
 					</main><!-- #main -->
