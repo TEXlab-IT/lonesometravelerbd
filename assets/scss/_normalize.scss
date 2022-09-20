@@ -156,20 +156,19 @@ a.skip-link {
 	background: $black;
 }
 
-@include mq(md) {
+@media (min-width: 1400px) {
 	.container {
-		max-width: 1164px;
+		max-width: 1390px;
 	}
 }
-@include mq(false, sm) {
-	.container {
-		max-width: 95%;
-	}
-}
-@include mq(false, xs) {
+@media (max-width: 1390px) {
 	.container {
 		max-width: 100%;
 	}
+}
+
+
+@include mq(false, xs) {
 	.pt-xl-4 {
 		padding-top: 25px;
 	}

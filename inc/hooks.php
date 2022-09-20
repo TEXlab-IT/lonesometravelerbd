@@ -30,7 +30,7 @@ if ( ! function_exists( 'lonesometraveler_add_site_info' ) ) {
 		$site_info = sprintf(
 			'<p class="site-info-text">%1$s<span class="sep"> </span>%2$s</p>',
 			sprintf(
-				esc_html__( '© Copyright ' . $curent_year . ' %1$s All Rights Reserved. ', 'lonesometraveler' ),
+				esc_html__( '© Copyright ' . $curent_year . ' %1$s – We love Bangladesh. We hate prejudices. All Rights reserved. ', 'lonesometraveler' ),
 				'<a href="' . esc_url( __( site_url( '/' ), 'lonesometraveler' ) ) . '">' . $name . '.</a>'
 			),
 			sprintf(

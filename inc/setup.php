@@ -47,6 +47,7 @@ if ( ! function_exists( 'lonesometraveler_setup' ) ) {
 		register_nav_menus(
 			array(
 				'primary'           => __( 'Primary Menu', 'lonesometraveler' ),
+				'footer-menu'       => __( 'Footer Menu', 'lonesometraveler' ),
 			)
 		);
 

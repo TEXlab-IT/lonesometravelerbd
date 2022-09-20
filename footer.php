@@ -13,11 +13,20 @@ defined( 'ABSPATH' ) || exit;
 	<div class="wrapper-footer" id="wrapper-footer">
 		<div class="footer-area">
 			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="footer-top-section">
-
-						</div>
+				<div class="footer-top-section">
+					<div class="footer-nav navbar-expand-md">
+						<?php wp_nav_menu(
+								array(
+										'theme_location'  => 'footer-menu',
+										'container_class' => 'navbar-collapse footer-menu',
+										'container_id'    => 'navbarNavDropdown',
+										'menu_class'      => 'nav navbar-nav',
+										'menu_id'         => 'footer-menu',
+										'depth'           => 1,
+										'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+										'walker'          => new WP_Bootstrap_Navwalker(),
+								)
+						); ?>
 					</div>
 				</div>
 			</div><!-- container end -->

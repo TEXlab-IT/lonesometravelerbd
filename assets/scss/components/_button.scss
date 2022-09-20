@@ -51,3 +51,42 @@
 		@include transform(rotate(45deg));
 	}
 }
+
+
+.navbar-toggler {
+	background: 0 0;
+	border: none;
+	width: 20px;
+	height: 20px;
+	position: relative;
+	-webkit-appearance: button;
+	padding: 0;
+	cursor: pointer;
+	margin-right: 20px;
+	outline: none !important;
+
+	.navbar-toggler-icon {
+		position: relative;
+		width: 20px;
+		height: 1px;
+		background: $white;
+		display: block;
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			height: 1px;
+			width: 20px;
+			margin: auto;
+			background: $white;
+		}
+		&::before {
+			top: -6px;
+		}
+		&::after {
+			bottom: -6px;
+		}
+	}
+}

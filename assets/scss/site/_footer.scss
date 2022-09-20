@@ -1,22 +1,29 @@
 .footer-area {
 	display: block;
 	position: relative;
-	padding: 60px 0 30px;
-	background: $gray;
+	padding: 30px 0 5px;
+	background: #83b526;
+
 	.footer-top-section {
-		p {
-			color: $secondary;
-			font-size: 18px;
-			font-family: $primary_font;
-			font-weight: 500;
-			margin-bottom: 0;
-			a {
-				color: $secondary;
-				font-family: $primary_font;
-				text-decoration: underline;
-				&:hover,
-				&:focus {
-					color: $secondary;
+		@include display-flex;
+		@include align-items-center;
+		@include justify-content-center;
+		.footer-menu {
+			ul {
+				li {
+					margin-right: 14px;
+					a {
+						font-size: 14px;
+						line-height: 20px;
+						font-family: $primary_font;
+						font-weight: 400;
+						color: $white;
+						padding: 0 !important;
+						&:hover,
+						&:focus {
+							color: $primary;
+						}
+					}
 				}
 			}
 		}
@@ -27,28 +34,26 @@
 .site-info-area {
 	display: block;
 	position: relative;
-	background: $gray;
+	background: #83b526;
 	.site-info {
 		display: block;
 		position: relative;
-		padding: 15px 0;
+		padding-bottom: 40px;
 		.site-info-text {
 			color: $white;
-			font-size: 12px;
-			line-height: 15px;
+			font-size: 14px;
+			line-height: 20px;
 			margin-bottom: 0;
 			font-family: $primary_font;
-			font-weight: 600;
-			letter-spacing: -0.28px;
+			font-weight: 400;
 			text-align: center;
 
 			a {
 				color: $white;
-				font-size: 12px;
-				line-height: 14px;
+				font-size: 14px;
+				line-height: 20px;
 				font-family: $primary_font;
-				text-decoration: none;
-				font-weight: 700;
+				font-weight: 400;
 				&:hover, &:focus {
 					color: $secondary;
 				}
