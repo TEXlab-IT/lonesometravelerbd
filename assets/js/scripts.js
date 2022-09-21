@@ -7,8 +7,8 @@ window.TLtrap = (function (window, document, $, undefined) {
 			//console.log('Working');
 			$(window).on('scroll', app.handleSticky);
 			$('.copy-url-btn').on('click', app.copyToClipboard);
-			app.initSliderCarousel('#homeSliderCarousel');
-			app.initMainSlider('#slider');
+			app.initMainSlider('#mainSlider');
+			app.initContentSlider('.content-slider');
 		},
 		handleSticky: function () {
 			if ($(window).scrollTop() > 400) {
@@ -36,33 +36,21 @@ window.TLtrap = (function (window, document, $, undefined) {
 			}
 		},
 
-		initSliderCarousel: function ($selector) {
-			$($selector).owlCarousel({
-				loop: true,
-				autoplay: true,
-				autoHeight: false,
-				autoplayTimeout: 5000,
-				nav: true,
-				dots: false,
-				navText: ['<i class="fa fa-arrow-left"></i>', '<i class="fa fa-arrow-right"></i>'],
-				responsiveClass: true,
-				responsive: {
-					0: {
-						items: 2
-					},
-					600: {
-						items: 3
-					},
-					1000: {
-						items: 5
-					}
-				}
-			});
-		},
-
 		initMainSlider: function ($selector) {
 			$($selector).nivoSlider({
 				effect: 'fade',
+				animSpeed: 500,
+				pauseTime: 4000,
+				startSlide: 0,
+				directionNav: false,
+				controlNav: false,
+				controlNavThumbs: false,
+				pauseOnHover: false
+			});
+		},
+		initContentSlider: function ($selector) {
+			$($selector).nivoSlider({
+				effect: 'fold',
 				animSpeed: 500,
 				pauseTime: 4000,
 				startSlide: 0,

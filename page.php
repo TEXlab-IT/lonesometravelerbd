@@ -17,7 +17,7 @@ get_header();
 
 ?>
 <div class="slider-wrapper theme-default">
-	<div id="slider" class="nivoSlider"
+	<div id="mainSlider" class="nivoSlider"
 	<img src="https://www.lonesome-traveler.de/images/slideshow/08/08_slideshow_01.jpg" alt="Vinaora Nivo Slider 3.x" >
 	<img src="https://www.lonesome-traveler.de/images/slideshow/08/08_slideshow_02.jpg" alt="Vinaora Nivo Slider 3.x" >
 	<img src="https://www.lonesome-traveler.de/images/slideshow/08/08_slideshow_03.jpg" alt="Vinaora Nivo Slider 3.x" >
