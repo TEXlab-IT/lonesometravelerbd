@@ -76,66 +76,37 @@
 		display: block;
 		position: relative;
 		color: $black;
-		font-size: 38px;
-		line-height: 50px;
+		font-size: 14px;
+		line-height: 21px;
 		font-family: $primary_font;
-		padding-top: 20px;
-		margin-bottom: 30px;
-		@include mq(xs, md) {
-			font-size: 28px;
-			line-height: 40px;
-			padding-top: 50px;
-		}
-		@include mq(false, xs) {
-			font-size: 24px;
-			line-height: 32px;
-			padding-top: 40px;
-		}
+		padding-top: 10px;
+		margin-bottom: 20px;
 
 		&:before {
 			content: '“';
 			position: absolute;
 			color: $primary;
-			font-size: 160px;
+			font-size: 40px;
 			line-height: 1;
 			font-family: $primary_font;
 			font-weight: 400;
-			left: -75px;
-			top: 0;
-
-			@include mq(xs, md) {
-				font-size: 120px;
-				left: 0;
-				top: -10px;
-			}
-			@include mq(false, xs) {
-				font-size: 100px;
-				left: 0;
-				top: -10px;
-			}
+			left: -18px;
+			top: 8px;
 		}
 		p {
 			color: $black;
-			font-size: 38px;
-			line-height: 50px;
+			font-size: 14px;
+			line-height: 21px;
 			font-family: $primary_font;
 			font-weight: 300;
 			&:last-child {
 				margin-bottom: 0;
 			}
-			@include mq(xs, md) {
-				font-size: 28px;
-				line-height: 40px;
-			}
-			@include mq(false, xs) {
-				font-size: 24px;
-				line-height: 32px;
-			}
 		}
 	}
 	table {
-		font-size: 18px;
-		line-height: 30px;
+		font-size: 14px;
+		line-height: 21px;
 		border: 1px solid $lightgray;
 		margin-bottom: 10px;
 		tr {

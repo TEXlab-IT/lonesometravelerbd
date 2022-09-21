@@ -25,6 +25,8 @@ $lonesometraveler_includes = array(
 	'/class-wp-bootstrap-navwalker.php',    // Load custom WordPress nav walker. Trying to get deeper navigation?
 	'/extras.php',                          // Custom functions that act independently of the theme templates.
 	'/customizer.php',                      // Customizer additions.
+	'/post-type.php',                       // Custom Post Types
+	'/metaboxes.php',                       // Custom Meta Box
 
 );
 

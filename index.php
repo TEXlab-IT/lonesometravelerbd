@@ -25,11 +25,7 @@ get_header();
 				<div class="col-lg-8 content-area mobile-mb" id="primary">
 
 					<main class="site-main" id="main">
-						<?php
-						global $wp_query;
-						$args = array_merge( $wp_query->query_vars, array( 'post__not_in' => get_option('sticky_posts'),));
-						query_posts( $args );
-						?>
+
                     <?php if ( have_posts() ) : ?>
 							<header class="page-header">
 								<?php echo sprintf( '<h1 class="page-title">%s</h1>', esc_html__('Latest Posts') ); ?>

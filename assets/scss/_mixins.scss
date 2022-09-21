@@ -16,13 +16,13 @@
 }
 @mixin important-text {
 	color: $text-color;
-	font-size: 18px;
+	font-size: 14px;
 	font-family: $body_font;
 	font-weight: 400;
 }
 @mixin paragraph-text {
 	color: $text-color;
-	font-size: 16px;
+	font-size: 14px;
 	font-family: $body_font;
 	font-weight: 400;
 }

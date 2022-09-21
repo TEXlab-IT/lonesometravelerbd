@@ -8,8 +8,8 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$layout    = isset( $args['layout'] ) ? $args['layout'] : 'list-layout';
-$thumbnail = isset( $args['thumbnail'] ) ? $args['thumbnail'] : 'small-thumb';
+$layout    = isset( $args['layout'] ) ? $args['layout'] : 'full-grid';
+$thumbnail = isset( $args['thumbnail'] ) ? $args['thumbnail'] : 'medium-thumb';
 $excerpt   = isset( $args['excerpt'] ) ? $args['excerpt'] : true;
 $category = isset( $args['category'] ) ? $args['category'] : true;
 ?>
