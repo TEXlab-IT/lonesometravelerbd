@@ -16,21 +16,12 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 
 ?>
-<div class="slider-wrapper theme-default">
-	<div id="mainSlider" class="nivoSlider"
-	<img src="https://www.lonesome-traveler.de/images/slideshow/08/08_slideshow_01.jpg" alt="Vinaora Nivo Slider 3.x" >
-	<img src="https://www.lonesome-traveler.de/images/slideshow/08/08_slideshow_02.jpg" alt="Vinaora Nivo Slider 3.x" >
-	<img src="https://www.lonesome-traveler.de/images/slideshow/08/08_slideshow_03.jpg" alt="Vinaora Nivo Slider 3.x" >
-	<img src="https://www.lonesome-traveler.de/images/slideshow/08/08_slideshow_04.jpg" alt="Vinaora Nivo Slider 3.x" >
-	<img src="https://www.lonesome-traveler.de/images/slideshow/08/08_slideshow_05.jpg" alt="Vinaora Nivo Slider 3.x" >
-	<img src="https://www.lonesome-traveler.de/images/slideshow/08/08_slideshow_06.jpg" alt="Vinaora Nivo Slider 3.x" >
-	<img src="https://www.lonesome-traveler.de/images/slideshow/08/08_slideshow_07.jpg" alt="Vinaora Nivo Slider 3.x" >
-	<img src="https://www.lonesome-traveler.de/images/slideshow/08/08_slideshow_08.jpg" alt="Vinaora Nivo Slider 3.x" >
-	<img src="https://www.lonesome-traveler.de/images/slideshow/08/08_slideshow_09.jpg" alt="Vinaora Nivo Slider 3.x" >
-	<img src="https://www.lonesome-traveler.de/images/slideshow/08/08_slideshow_10.jpg" alt="Vinaora Nivo Slider 3.x" >
-	<img src="https://www.lonesome-traveler.de/images/slideshow/08/08_slideshow_11.jpg" alt="Vinaora Nivo Slider 3.x" >
-	</div>
-</div>
+<?php
+$slider = get_post_meta( get_the_ID(), 'slider_deactivate', true );
+if( $slider != 1 ) {
+	get_template_part( 'template-parts/main-slider' );
+}
+?>
 <div class="wrapper page-wrapper" id="page-wrapper">
 
 	<div class="container" id="content" tabindex="-1">

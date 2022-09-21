@@ -27,6 +27,7 @@ $lonesometraveler_includes = array(
 	'/customizer.php',                      // Customizer additions.
 	'/post-type.php',                       // Custom Post Types
 	'/metaboxes.php',                       // Custom Meta Box
+	'/shortcode.php',                       // Custom Shortcode
 
 );
 

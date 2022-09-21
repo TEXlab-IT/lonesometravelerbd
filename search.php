@@ -27,7 +27,7 @@ $count 	= 0;
 					<main class="site-main" id="main">
 
 						<?php if ( have_posts() ) : ?>
-							<?php es_section_title('Search results', 'left'); ?>
+							<?php lonesometraveler_section_title('Search results', 'left'); ?>
 							<?php /* Start the Loop */ ?>
 							<?php
 							while ( have_posts() ) :

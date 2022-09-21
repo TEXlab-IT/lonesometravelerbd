@@ -22,9 +22,9 @@ function lonesometraveler_custom_post_type()
 	$args = array(
 		'labels' => $labels,
 		'public' => true,
-		'has_archive' => true,
+		'has_archive' => false,
 		'query_var' => true,
-		'can_export' => true,
+		'can_export' => false,
 		'rewrite' => array('slug' => 'sliders'),
 		'menu_position' => 7,
 		'supports' => array('title'),

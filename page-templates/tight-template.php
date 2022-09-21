@@ -12,6 +12,12 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 ?>
+	<?php
+	$slider = get_post_meta( get_the_ID(), 'slider_deactivate', true );
+	if( $slider != 1 ) {
+		get_template_part( 'template-parts/main-slider' );
+	}
+	?>
 	<div class="wrapper" id="tight-page-wrapper">
 
 		<div class="container bg-white ptb" id="content">

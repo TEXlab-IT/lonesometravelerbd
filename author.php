@@ -25,7 +25,7 @@ $user_email = get_the_author_meta( 'user_email' );
 						<!-- Author Information -->
 						<?php get_template_part( 'template-parts/author-bio' ); ?>
 
-						<?php es_section_title('More Stories from this Author'); ?>
+						<?php lonesometraveler_section_title('More Stories from this Author'); ?>
 
 						<!-- The Loop -->
 						<div class="author-post-area">

@@ -237,7 +237,7 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 
 
 // lonesometraveler social media function
-function es_social_media() {
+function lonesometraveler_social_media() {
 	// If ACF class is not available / active
 	if (!class_exists('acf')) {
 		return;
@@ -384,7 +384,7 @@ if (!function_exists('lonesometraveler_post_social_share')) {
   }
 }
 
-function es_section_title( $title, $class="", $url= null ) {
+function lonesometraveler_section_title( $title, $class="", $url= null ) {
 	if( ! empty( $url ) ) {
 		echo sprintf('<div class="section-header"><h2 class="section-title %s"><a href="%s">%s</a></h2></div>',$class, $url, esc_html__($title, 'lonesometraveler'));
 	}else {
@@ -393,13 +393,6 @@ function es_section_title( $title, $class="", $url= null ) {
 
 }
 
-function es_get_first_sentence($content) {
-	$string = wp_strip_all_tags( strip_shortcodes($content) );
-	$split = preg_split('/(\.|\!|\?)/', $string, 3, PREG_SPLIT_DELIM_CAPTURE);
-	$custom_desc = implode('', array_slice($split, 0, 2));
-
-	return htmlspecialchars($custom_desc);
-}
 
 /**
  * Displays a custom logo.
@@ -430,8 +423,8 @@ function lonesometraveler_custom_logo() {
 }
 
 // Login Logout Link on Header menu
-add_filter('wp_nav_menu_items', 'es_add_login_logout_link', 10, 2);
-function es_add_login_logout_link($items, $args) {
+add_filter('wp_nav_menu_items', 'lonesometraveler_add_login_logout_link', 10, 2);
+function lonesometraveler_add_login_logout_link($items, $args) {
 	if ( 'header-menu' == $args->theme_location ) {
 		ob_start();
 		if ( ! is_user_logged_in() ) {
@@ -455,7 +448,6 @@ function es_add_login_logout_link($items, $args) {
 
 if ( ! function_exists( 'lonesometraveler_get_field' ) ) {
 	function lonesometraveler_get_field( $field_name, $id = null ) {
-
 		if ( class_exists( 'acf' ) ) {
 
 			if ( empty( $field_name ) ) {

@@ -27,7 +27,6 @@ defined( 'ABSPATH' ) || exit;
 					echo get_the_excerpt();
 				} else {
 					$post_content = get_the_content( get_the_ID() );
-					//$content = es_get_first_sentence($post_content);
 					$content = strip_shortcodes($post_content);
 					echo wp_trim_words( $content,22,'..');
 				}
