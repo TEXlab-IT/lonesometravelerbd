@@ -8,6 +8,7 @@ window.TLtrap = (function (window, document, $, undefined) {
 			$(window).on('scroll', app.handleSticky);
 			$('.copy-url-btn').on('click', app.copyToClipboard);
 			app.initSliderCarousel('#homeSliderCarousel');
+			app.initMainSlider('#slider');
 		},
 		handleSticky: function () {
 			if ($(window).scrollTop() > 400) {
@@ -56,6 +57,19 @@ window.TLtrap = (function (window, document, $, undefined) {
 						items: 5
 					}
 				}
+			});
+		},
+
+		initMainSlider: function ($selector) {
+			$($selector).nivoSlider({
+				effect: 'fade',
+				animSpeed: 500,
+				pauseTime: 4000,
+				startSlide: 0,
+				directionNav: false,
+				controlNav: false,
+				controlNavThumbs: false,
+				pauseOnHover: false
 			});
 		}
 	};

@@ -1,4 +1,21 @@
 .entry-content {
+	h1 {
+		color: $title-color;
+		font-size: 26px;
+		line-height: 26px;
+		margin-bottom: 25px;
+	}
+	h2 {
+		color: $gray;
+		font-size: 17px;
+		line-height: 2;
+		margin-bottom: 20px;
+		border-bottom: 1px dotted $bd-color;
+	}
+	p {
+		font-size: 14px;
+		line-height: 21px;
+	}
 	a {
 		&:focus,
 		&:hover {
