@@ -16,14 +16,14 @@ function lonesometraveler_group_tour_slider( $atts ) {
 			'id' => '',
 	), $atts ) );
 	if ( empty( $id ) ) {
-		return;
+		return false;
 	}
 	$slider_items = lonesometraveler_get_field('slider_items', $id);
 	ob_start();
 	if( ! empty( $slider_items ) ){
 		?>
 		<div class="slider-wrapper theme-default">
-			<div id="contentSlider" class="content-slider nivoSlider"
+			<div id="contentSlider" class="content-slider nivoSlider">
 				<?php
 				foreach ($slider_items as $slider) {
 					$image = $slider['image'];
