@@ -27,8 +27,9 @@
 	font-weight: 400;
 }
 @mixin anchor-text {
-	color: $primary;
-	font-family: $secondary_font;
+	color: $secondary;
+	font-family: $primary_font;
+  	text-decoration: none;
 }
 @mixin button-text {
 	font-size: 14px;
