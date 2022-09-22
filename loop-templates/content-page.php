@@ -17,7 +17,7 @@ global $post;
 		<?php the_content(); ?>
 
 		<div class="slider-wrapper theme-default">
-			<div id="contentSlider" class="content-slider nivoSlider"
+			<div id="contentSlider" class="content-slider nivoSlider">
 				<img src="https://www.lonesome-traveler.de/images/animationen/gruppenreisen-en/G01.jpg" alt="Vinaora Nivo Slider 3.x" >
 				<img src="https://www.lonesome-traveler.de/images/animationen/gruppenreisen-en/G02.jpg" alt="Vinaora Nivo Slider 3.x" >
 				<img src="https://www.lonesome-traveler.de/images/animationen/gruppenreisen-en/G03.jpg" alt="Vinaora Nivo Slider 3.x" >
