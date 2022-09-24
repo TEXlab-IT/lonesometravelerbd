@@ -12,7 +12,7 @@ $main_sliders = lonesometraveler_get_field('main_slider', 'option');
 if( ! empty($main_sliders) ) {
 ?>
 	<div class="slider-wrapper theme-default">
-		<div id="mainSlider" class="nivoSlider"
+		<div id="mainSlider" class="nivoSlider">
 			<?php
 			foreach ( $main_sliders as $slider ) {
 				$image = $slider[ 'image' ];
