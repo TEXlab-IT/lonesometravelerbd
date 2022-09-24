@@ -16,8 +16,7 @@ if ( ! function_exists( 'lonesometraveler_scripts' ) ) {
 		// Get the theme data.
 		$theme_version = 20220821;
 		// Enqueue Font Family
-        wp_enqueue_style( 'es-cabin-font', 'https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap', false );
-        wp_enqueue_style( 'es-playfair-font', 'https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400;500;600;700&display=swap', false );
+        wp_enqueue_style( 'roboto-font', 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap', false );
 
         // Enqueue css
 		wp_enqueue_style( 'nivoslider-styles', THEME_ASSETS_URL . '/vendor/nivo-slider/nivo-slider.css', array(), $theme_version );

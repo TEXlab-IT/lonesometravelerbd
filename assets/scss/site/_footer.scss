@@ -11,7 +11,9 @@
 		.footer-menu {
 			ul {
 				li {
-					margin-right: 14px;
+					padding-right: 10px;
+					margin-right: 10px;
+					border-right: 1px solid $white;
 					a {
 						font-size: 14px;
 						line-height: 20px;
@@ -23,6 +25,9 @@
 						&:focus {
 							color: $primary;
 						}
+					}
+					&:last-child {
+						border-right: none;
 					}
 				}
 			}

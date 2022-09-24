@@ -5,6 +5,9 @@
 		li {
 			position: relative;
 			margin-bottom: 0;
+			@media only screen and (max-width: 991px) {
+				text-align: center;
+			}
 			&.active {
 				> a {
 					color: $primary;
@@ -30,12 +33,19 @@
 				padding: 3px 0 0;
 				margin: 0;
 				border-radius: 0;
+				@media only screen and (max-width: 991px) {
+					padding: 0;
+					border: none;
+				}
 				.dropdown-menu {
 					padding: 0;
 				}
 				li {
 					background-color: #7bb018;
 					border-bottom: 1px solid $primary;
+					@media only screen and (max-width: 991px) {
+						border-bottom: none;
+					}
 					a {
 						font-size: 16px;
 						line-height: 20px;
