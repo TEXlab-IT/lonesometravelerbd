@@ -22,7 +22,13 @@ if( $slider != 1 ) {
 	get_template_part( 'template-parts/main-slider' );
 }
 ?>
+
 <div class="wrapper page-wrapper" id="page-wrapper">
+	<div class="site-breadcrumb">
+		<div class="container">
+			<?php echo lonesometraveler_breadcrumbs(); ?>
+		</div>
+	</div>
 
 	<div class="container" id="content" tabindex="-1">
 

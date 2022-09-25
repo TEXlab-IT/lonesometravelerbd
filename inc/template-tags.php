@@ -92,67 +92,18 @@ if ( ! function_exists( 'lonesometraveler_post_byline' ) ) {
 if ( ! function_exists( 'lonesometraveler_breadcrumbs' ) ) :
 
 	function lonesometraveler_breadcrumbs() { ?>
-		<nav aria-label="breadcrumb" class="site-breadcrumb">
-			<ul class="breadcrumb lonesometraveler-breadcrumb">
+		<nav aria-label="breadcrumb" class="nav-breadcrumb">
+			<ul class="breadcrumb">
 				<li class="breadcrumb-item">
 					<a href="<?php echo esc_url( site_url() ); ?>"><?php esc_html_e( 'Home', 'lonesometraveler' ) ?></a>
 				</li>
-				<li class="breadcrumb-item active" aria-current="page">
-					<?php if ( is_tag() ) { ?>
-						<?php esc_html_e( 'Posts Tagged ', 'lonesometraveler' ) ?><span
-							class="raquo">|</span><?php single_tag_title();
-						echo( '' ); ?>
-					<?php } elseif ( is_day() ) { ?>
-						<?php esc_html_e( 'Posts made in', 'lonesometraveler' ) ?><?php echo esc_html( get_the_time( 'F jS, Y' ) ); ?>
-					<?php } elseif ( is_month() ) { ?>
-						<?php esc_html_e( 'Posts made in', 'lonesometraveler' ) ?><?php echo esc_html( get_the_time( 'F, Y' ) ); ?>
-					<?php } elseif ( is_year() ) { ?>
-						<?php esc_html_e( 'Posts made in', 'lonesometraveler' ) ?><?php echo esc_html( get_the_time( 'Y' ) ); ?>
-					<?php } elseif ( is_search() ) { ?>
-						<?php esc_html_e( 'Search results for', 'lonesometraveler' ) ?><?php the_search_query() ?>
-					<?php } elseif ( is_404() ) { ?>
-						<?php esc_html_e( '404', 'lonesometraveler' ) ?>
-					<?php } elseif ( is_single() ) { ?>
-						<?php $category = get_the_category();
-						if ( $category ) {
-							$catlink = get_category_link( $category[0]->cat_ID );
-							echo( '<a href="' . esc_url( $catlink ) . '">' . esc_html( $category[0]->cat_name ) . '</a> ' . '<span class="raquo"> / </span> ' );
-						}
-						echo get_the_title(); ?>
-					<?php } elseif ( is_category() ) { ?>
-						<?php single_cat_title(); ?>
-					<?php } elseif ( is_tax() ) { ?>
-						<?php
-						$tt_taxonomy_links = array();
-						$tt_term           = get_queried_object();
-						$tt_term_parent_id = $tt_term->parent;
-						$tt_term_taxonomy  = $tt_term->taxonomy;
-
-						while ( $tt_term_parent_id ) {
-							$tt_current_term     = get_term( $tt_term_parent_id, $tt_term_taxonomy );
-							$tt_taxonomy_links[] = '<a href="' . esc_url( get_term_link( $tt_current_term, $tt_term_taxonomy ) ) . '" title="' . esc_attr( $tt_current_term->name ) . '">' . esc_html( $tt_current_term->name ) . '</a>';
-							$tt_term_parent_id   = $tt_current_term->parent;
-						}
-
-						if ( ! empty( $tt_taxonomy_links ) ) {
-							echo implode( ' <span class="raquo">|</span> ', array_reverse( $tt_taxonomy_links ) ) . ' <span class="raquo">|</span> ';
-						}
-
-						echo esc_html( $tt_term->name );
-					} elseif ( is_author() ) {
-						global $wp_query;
-						$curauth = $wp_query->get_queried_object();
-
-						echo ' ', esc_html( $curauth->nickname );
-
-					} elseif ( is_page() ) {
-						echo get_the_title();
-					} elseif ( is_home() ) {
-						esc_html_e( 'News', 'lonesometraveler' );
-					} elseif ( class_exists( 'WooCommerce' ) and ( is_shop() ) ) {
-						esc_html_e( 'Shop', 'lonesometraveler' );
-					} ?>
-				</li>
+				<?php if ( is_page() ) {
+					if(has_post_parent(get_the_ID())){
+						$id =  wp_get_post_parent_id(get_the_ID());
+						echo sprintf('<li class="breadcrumb-item">%s</li>', get_the_title( $id ));
+					}
+					echo sprintf('<li class="breadcrumb-item active" aria-current="page">%s</li>', get_the_title());
+				}?>
 			</ul>
 		</nav>
 		<?php

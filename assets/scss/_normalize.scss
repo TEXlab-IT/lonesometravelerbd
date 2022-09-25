@@ -1,3 +1,10 @@
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
 html body {
 	line-height: 1.5; /* 1 */
 	-webkit-text-size-adjust: 100%; /* 2 */
@@ -184,6 +191,9 @@ a.skip-link {
     background-image: url('../images/bg.jpeg');
 	@include mq(false, xs) {
 		padding-top: 25px;
+	}
+	&.page-wrapper {
+		padding-top: 0;
 	}
 }
 .page-header {
