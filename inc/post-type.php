@@ -21,7 +21,8 @@ function lonesometraveler_custom_post_type()
 
 	$args = array(
 		'labels' => $labels,
-		'public' => true,
+		'public'    => false,
+		'show_ui'   => true,
 		'has_archive' => false,
 		'query_var' => true,
 		'can_export' => false,
