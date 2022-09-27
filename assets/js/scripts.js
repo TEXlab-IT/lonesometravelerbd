@@ -35,10 +35,20 @@ window.TLtrap = (function (window, document, $, undefined) {
 			// });
 		},
 		handleSticky: function () {
-			if ($(window).scrollTop() > 400) {
+			// if ($(window).scrollTop() > 400) {
+			// 	$('#wrapper-navbar').addClass('sticky-header');
+			// } else if ($(window).scrollTop() < 200) {
+			// 	$('#wrapper-navbar').removeClass('sticky-header');
+			// }
+			var header = document.getElementById('main-header');
+			var sticky = header.offsetTop;
+
+			if (window.pageYOffset > sticky) {
 				$('#wrapper-navbar').addClass('sticky-header');
-			} else if ($(window).scrollTop() < 200) {
+				//header.classList.add('sticky-header');
+			} else {
 				$('#wrapper-navbar').removeClass('sticky-header');
+				//header.classList.remove('sticky-header');
 			}
 		},
 		//Copy To Clipboard
