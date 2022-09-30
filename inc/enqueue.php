@@ -14,7 +14,7 @@ if ( ! function_exists( 'lonesometraveler_scripts' ) ) {
 	 */
 	function lonesometraveler_scripts() {
 		// Get the theme data.
-		$theme_version = 20220821;
+		$theme_version = 20220930;
 		// Enqueue Font Family
         wp_enqueue_style( 'roboto-font', 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap', false );
 

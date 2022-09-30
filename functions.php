@@ -28,6 +28,7 @@ $lonesometraveler_includes = array(
 	'/post-type.php',                       // Custom Post Types
 	'/metaboxes.php',                       // Custom Meta Box
 	'/shortcode.php',                       // Custom Shortcode
+	'/class-lt-load-more.php',              // Load More Posts
 
 );
 

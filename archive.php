@@ -28,6 +28,17 @@ get_header();
 
 					<main class="site-main" id="main">
 
+						<div class="timeline-breaker">
+							<?php
+							$time_string   = '<time datetime="%1$s">%2$s</time>';
+							$time_string   = sprintf( $time_string,
+									esc_html( date( 'F Y' ) ),
+									esc_html( date( 'j F Y' ) )
+							);
+							echo $time_string;
+							?>
+						</div>
+
 						<?php if ( have_posts() ) : ?>
 
 							<?php /* Start the Loop */ ?>

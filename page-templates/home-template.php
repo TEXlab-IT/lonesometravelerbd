@@ -47,10 +47,15 @@ get_header();
 						<?php endwhile; // end of the loop. ?>
 
 					</main><!-- #main -->
-
 				</div>
 
 			</div><!-- .row -->
+
+			<div class="row">
+				<div class="col-md-12">
+					<?php get_template_part( 'template-parts/latest-news-section' ); ?>
+				</div>
+			</div>
 
 		</div><!-- #content -->
 	</div>

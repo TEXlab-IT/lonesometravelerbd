@@ -1,4 +1,4 @@
-.es-btn {
+.btn {
 	color: $black;
 	font-size: 14px;
 	line-height: 18px;
@@ -30,6 +30,26 @@
 	&:focus {
 		background: $primary;
 		color: $white;
+	}
+}
+.lt-load-more {
+	color: $white;
+	font-family: $primary_font;
+	background: $secondary;
+	padding: 14px 21px 11px;
+	font-size: 16px;
+	line-height: 24px;
+	box-shadow: 0 4px #426206;
+	border: 1px solid transparent;
+	top: 2px;
+	border-radius: 4px;
+	transition: all 0.3s ease-out 0s;
+	display: inline-block;
+	&:hover,
+	&:focus {
+		background: $secondary;
+		color: $white;
+		box-shadow: none;
 	}
 }
 
