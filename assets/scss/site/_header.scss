@@ -25,10 +25,6 @@
 	box-shadow: 0 1px 1px #70707080;
 	opacity: 1;
 
-	@include mq(false, xs) {
-		padding: 5px 0;
-		box-shadow: none;
-	}
 	&.sticky-header {
 		position: fixed;
 		top: 0;
