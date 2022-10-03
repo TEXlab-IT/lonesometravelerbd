@@ -15,6 +15,9 @@
 				background-color: #F3FFDA;
 				margin: 0 0 10px;
 				padding: 5px 10px;
+				@include mq(false, xs) {
+					flex-wrap: wrap;
+				}
 				.wpforms-field-label-inline,
 				.wpforms-field-label {
 					font-size: 14px;
