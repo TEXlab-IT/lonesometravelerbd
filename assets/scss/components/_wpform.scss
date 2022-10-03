@@ -1,0 +1,41 @@
+.wpforms-container {
+	display: block;
+	position: relative;
+	border: 1px solid #C6DC9D;
+	margin: 0 0 10px;
+	padding: 10px 10px;
+	background-color: #fff;
+	.wpforms-form {
+		.wpforms-field-container {
+			display: block;
+			position: relative;
+			.wpforms-field {
+				display: flex;
+				align-items: center;
+				background-color: #F3FFDA;
+				margin: 0 0 10px;
+				padding: 5px 10px;
+				.wpforms-field-label-inline,
+				.wpforms-field-label {
+					font-size: 14px;
+					font-style: normal;
+					font-weight: 400;
+					width: 180px;
+				}
+				.wpforms-field-medium {
+					max-width: 420px !important;
+				}
+			}
+		}
+		.wpforms-submit-container {
+			.wpforms-submit {
+				background-color: #7CB019;
+				border: 1px solid #7CB019;
+				color: #fff;
+				font-size: 14px;
+				padding: 5px 20px;
+			}
+		}
+	}
+}
+
