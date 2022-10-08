@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 <article <?php post_class('list-layout'); ?> id="post-<?php the_ID(); ?>">
 
 	<div class="entry-content">
-		<?php echo lonesometraveler_posted_on(); ?>
+		<?php lonesometraveler_posted_on( get_the_ID() ); ?>
 		<?php
 			$post_content = get_the_content( get_the_ID() );
 			$content = strip_shortcodes($post_content);

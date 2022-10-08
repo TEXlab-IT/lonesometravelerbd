@@ -74,13 +74,17 @@ endif;
  * Post Date Function
  */
 if ( ! function_exists( 'lonesometraveler_posted_on' ) ) {
-	function lonesometraveler_posted_on() {
-		if ( 'post' == get_post_type())  {
+	function lonesometraveler_posted_on( $postId = null ) {
+		if ( ! $postId ) {
+			global $post;
+			$postId = ! empty( $post->ID ) ? $post->ID : null;
+		}
+		if ( 'post' == get_post_type( $postId ))  {
 		$time_string   = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
 		$time_string   = sprintf( $time_string,
-				esc_html( get_the_date( 'F Y' ) ),
-				esc_html( get_the_modified_date( 'j F Y' ) )
+				esc_html( get_the_date( 'F Y', $postId ) ),
+				esc_html( get_the_date( 'd F Y', $postId ) )
 			);
 		?>
 		<div class="posted-on">
