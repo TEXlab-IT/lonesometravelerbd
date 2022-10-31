@@ -9,6 +9,8 @@
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
+$site_lang = get_field( 'lonesome_site_language', 'option' );
+$switch = get_field( 'url_language_switcher', get_the_ID() );
 
 ?>
 <!DOCTYPE html>
@@ -29,13 +31,29 @@ defined( 'ABSPATH' ) || exit;
 		<div class="header-top-section">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-6">
-						<div id="fav-language" class="mod-languages">
-							<a href="/de/"><img src="<?php echo THEME_ASSETS_URL .'/images/de.gif'; ?>" alt="Deutsch" title="Deutsch"></a>
+					<?php if ( 'de' == $site_lang ) {
+						?>
+						<div class="col-sm-6">
+							<div id="fav-language" class="mod-languages">
+								<a href="<?php echo get_the_permalink(); ?>"><img src="<?php echo THEME_ASSETS_URL . '/images/de.gif'; ?>"
+													alt="Deutsch" title="Deutsch"></a>
 
-							<a href="/en/"><img src="<?php echo THEME_ASSETS_URL .'/images/en.gif'; ?>" alt="English (UK)" title="English (UK)"></a>
+								<a href="<?php echo esc_url( 'https://en.lonesometravelerbd.com/' . $switch ); ?>"><img src="<?php echo THEME_ASSETS_URL . '/images/en.gif'; ?>"
+													alt="English (UK)" title="English (UK)"></a>
+							</div>
 						</div>
-					</div>
+					<?php } else if ( 'en' == $site_lang ) {
+						?>
+						<div class="col-sm-6">
+							<div id="fav-language" class="mod-languages">
+								<a href="<?php echo esc_url( 'https://lonesometravelerbd.com/' . $switch ); ?>"><img src="<?php echo THEME_ASSETS_URL . '/images/de.gif'; ?>"
+													alt="Deutsch" title="Deutsch"></a>
+
+								<a href="<?php echo get_the_permalink(); ?>"><img src="<?php echo THEME_ASSETS_URL . '/images/en.gif'; ?>"
+													alt="English (UK)" title="English (UK)"></a>
+							</div>
+						</div>
+					<?php } ?>
 					<div class="col-sm-6">
 						<div class="top-header-right">
 							<img src="<?php echo THEME_ASSETS_URL .'/images/topbar-text-en.jpg'; ?>" alt="<?php echo get_bloginfo( 'name' ); ?>">
